@@ -1,4 +1,45 @@
-// Policy Role for Code Deploy
+{
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Resource": [
+                "*"
+            ],
+            "Action": [
+                "ec2:Describe*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Resource": [
+                "*"
+            ],
+            "Action": [
+                "autoscaling:CompleteLifecycleAction",
+                "autoscaling:DeleteLifecycleHook",
+                "autoscaling:DescribeLifecycleHooks",
+                "autoscaling:DescribeAutoScalingGroups",
+                "autoscaling:PutLifecycleHook",
+                "autoscaling:RecordLifecycleActionHeartbeat"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Resource": [
+                "*"
+            ],
+            "Action": [
+                "Tag:getResources",
+                "Tag:getTags",
+                "Tag:getTagsForResource",
+                "Tag:getTagsForResourceList"
+            ]
+        }
+    ]
+}
+
+
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -19,7 +60,7 @@
   ]
 }
 
-// Policy Trust for Code Deploy
+
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -37,7 +78,6 @@
   ]
 }
 
-// Instance Role for EC2 Instance
 { 
     "Version": "2012-10-17", 
     "Statement": [   
